@@ -1,0 +1,16 @@
+她知 · 制度日历
+Copyright (c) 2026 她知 (Ta Zhi)
+
+The MIT license in LICENSE applies to the source code and technical
+documentation in this repository.
+
+The following are excluded from the MIT grant and remain all rights reserved:
+
+- the "她知" name, brand seal, logo, and visual identity;
+- all original calendar card copy, questions, action prompts, and rendered
+  brand assets, including the content in api/_data.js.
+
+The original content is publicly viewable but may not be reproduced,
+redistributed, adapted, translated, or used commercially without written
+permission. See CONTENT-LICENSE.md. Third-party components are covered by
+their own licenses in THIRD_PARTY_NOTICES.md.

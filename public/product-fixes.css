@@ -1,0 +1,697 @@
+/* 她知 · 首屏与体验修正层 */
+
+.first-screen-promise {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  gap: 10px;
+  align-items: stretch;
+  margin: 14px auto 0;
+  max-width: 1160px;
+  padding: 14px 16px;
+  border: 1px solid var(--line, #D8C4A8);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.94);
+  color: var(--color-light-text, #211C18);
+}
+
+.first-screen-promise .promise-item {
+  padding: 10px 12px;
+  border-left: 3px solid var(--accent, #A7342E);
+  border-radius: 0 6px 6px 0;
+  background: var(--card, #FBF3E2);
+}
+
+.first-screen-promise .promise-item strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: var(--color-light-text, #211C18);
+}
+
+.first-screen-promise .promise-item span {
+  color: var(--color-light-text, #211C18);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.primary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent, #A7342E);
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(167, 52, 46, 0.22);
+}
+
+.primary-cta:hover {
+  background: var(--accent, #A7342E);
+  filter: brightness(0.94);
+}
+
+.brand-credibility {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+  max-width: 1160px;
+  margin: 10px auto 0;
+  color: var(--color-light-text, #211C18);
+  font-size: 14px;
+  text-align: center;
+}
+
+.brand-credibility span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brand-credibility span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent, #A7342E);
+}
+
+.psychology-strip {
+  max-width: 1160px;
+  margin: 10px auto 0;
+  padding: 10px 16px;
+  border: 1px dashed var(--line, #D8C4A8);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.8);
+  color: var(--color-light-text, #211C18);
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.card-toolbar .action-btn:not(.primary-cta),
+.card-toolbar .icon-btn {
+  border-color: var(--line, #D8C4A8);
+  background: rgba(255, 253, 248, 0.7);
+  color: var(--color-light-text, #211C18);
+}
+
+.card.has-front .front-text,
+.card.has-front .knowledge-text,
+.card.has-front .back-section p,
+.card.has-front .face-quote,
+.card.has-front .legal-meta {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+.card.has-front .face-title,
+.card.has-front .back-title {
+  font-size: 17px !important;
+  line-height: 1.5 !important;
+}
+
+.card.has-front .dimension-copy strong {
+  font-size: 14px !important;
+}
+
+.card.has-front .dimension-copy span {
+  font-size: 14px !important;
+}
+
+.card.has-front .day-dow {
+  font-size: 14px !important;
+}
+
+.card.has-front .section-label {
+  font-size: 14px !important;
+}
+
+.action-btn,
+.icon-btn,
+.gift-btn {
+  min-height: 40px;
+}
+
+.toolbar-secondary {
+  display: none !important;
+}
+
+body.toolbar-more-open .toolbar-secondary {
+  display: inline-flex !important;
+}
+
+#moreToolsBtn.active {
+  border-color: var(--accent, #A7342E);
+  color: var(--accent, #A7342E);
+}
+
+.trial-price {
+  margin: 0 0 8px;
+  color: var(--color-light-text, #211C18);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.trial-price strong {
+  color: var(--accent, #A7342E);
+  font-size: 18px;
+}
+
+/* 卡背内容较多时保留可读性，允许卡内滚动 */
+.knowledge-wrap {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(167, 52, 46, 0.35) transparent;
+}
+
+.knowledge-wrap::-webkit-scrollbar {
+  width: 5px;
+}
+
+.knowledge-wrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.knowledge-wrap::-webkit-scrollbar-thumb {
+  background: rgba(167, 52, 46, 0.35);
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .first-screen-promise {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .first-screen-promise .primary-cta {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 620px) {
+  .first-screen-promise {
+    grid-template-columns: 1fr;
+  }
+
+  .first-screen-promise .primary-cta {
+    width: 100%;
+  }
+
+  .card-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .card-actions .action-btn {
+    width: 100%;
+  }
+}
+
+
+/* 字体可读性修正 */
+.eyebrow,
+.brand-credibility,
+.psychology-strip,
+.day-identity span,
+.dimension-copy span,
+.day-dow,
+.back-meta,
+.section-label,
+.gd-dow,
+.gd-week,
+.gd-lock,
+.tools-note,
+.number-card p,
+.tool-card span,
+.contradiction-experience .subtitle,
+.quarterly-panel p,
+.quarterly-questions strong {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+.action-btn,
+.icon-btn,
+.gift-btn,
+.action-btn span,
+.icon-btn span,
+.gift-btn span {
+  font-size: 14px !important;
+}
+
+.gd-title,
+.week-item-copy span,
+.panel p,
+.tool-block p,
+.modal-note {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+.gd-dow,
+.gd-week,
+.gd-lock,
+.section-label,
+.eyebrow {
+  font-weight: 600 !important;
+}
+
+.week-item-copy strong {
+  font-size: 14px !important;
+}
+
+.front-text,
+.knowledge-text,
+.back-section p,
+.face-quote,
+.legal-meta {
+  font-size: 14px !important;
+}
+
+
+/* 字体可读性修正2：覆盖更高优先级的小字号 */
+.card.has-front .dimension-copy span,
+.card.has-front .day-dow,
+.card.has-front .section-label,
+.card.has-front .back-meta,
+.card.has-front .legal-meta,
+.gd-dow,
+.gd-week,
+.gd-lock,
+.gd-title,
+.story-act,
+.story-note,
+.monthly-month,
+.monthly-subtitle,
+.monthly-card li,
+.milestone-card li,
+.quarterly-tabs button,
+.monthly-nav button,
+.contradiction-options button,
+.contradiction-experience .subtitle,
+.quarterly-panel p,
+.quarterly-questions strong,
+.tool-card span,
+.number-card p,
+.tools-note,
+.modal-note {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+.quarterly-tabs button,
+.monthly-nav button,
+.contradiction-options button {
+  min-height: 42px;
+}
+
+
+/* 字体可读性修正3：年度结构、故事、页脚、标签 */
+.yw-week,
+.yw-label,
+.week-item-copy span,
+.story-card span,
+.story-note,
+.month-badge,
+.monthly-month,
+.monthly-subtitle,
+.monthly-card li,
+.milestone-card li,
+.footer span,
+.gift-tag,
+.trial-upgrade-kicker,
+.paywall-kicker,
+.brand-credibility,
+.eyebrow,
+.day-identity span,
+.dimension-copy span,
+.day-dow,
+.back-meta,
+.section-label,
+.gd-dow,
+.gd-week,
+.gd-lock,
+.gd-title,
+.tools-note,
+.number-card p,
+.tool-card span,
+.modal-note {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+.dimension-badge {
+  font-size: 14px !important;
+}
+
+
+/* 字体可读性修正4：周列表、维度列表、页脚 */
+#weekList span,
+#dimensionList span,
+.week-item-copy,
+.week-item-copy span,
+.dimension-item-copy,
+.dimension-item-copy span,
+.site-footer span,
+.footer span,
+.trial-banner-tag,
+.trial-banner span,
+.trial-banner-home span,
+.brand-mark,
+.brand-mark-img {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+
+/* 字体可读性修正5：维度列表和周列表的 strong/span */
+#dimensionList strong,
+#dimensionList span,
+.dimension-item-copy strong,
+.dimension-item-copy span,
+.dimension-item p,
+.week-item-copy strong,
+.week-item-copy span,
+.week-item p,
+.week-list strong,
+.week-list span,
+.week-list p {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+
+/* 字体可读性修正6：维度面板和年度图例 */
+#panelDimensionName,
+#panelDimensionQuestion,
+.panelDimensionName,
+.legend,
+.legend-item,
+.legend-item span,
+.legend span,
+.legend p,
+.year-section .legend,
+.year-section .legend-item {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+
+/* 字体可读性修正7：周状态标签 */
+#panelWeekLabel,
+.panelWeekLabel,
+.week-status,
+.week-item-copy p,
+.dimension-item-copy p {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+/* 手机端解锁弹层可滚动，避免按钮在屏幕外 */
+.paywall-card {
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+}
+
+.unlock-row {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  padding-top: 12px;
+  background: var(--color-surface, #FFFDF8);
+}
+
+/* 桌面双列：右侧那一列与卡片等高，上下边缘对齐。
+   980px 以下会切成单列 / 两列并排，所以这里只在宽屏生效。 */
+/* 顶栏内边距原来用 100vw 算，把滚动条宽度也算了进去，
+   于是顶栏里的搜索框恒比 main 里的内容右移半个滚动条（约 7~15px）。
+   改用 100%（和 main 的参考系一致），右列就能和搜索框左右对齐了。
+   640px 以下顶栏另有一套 padding，这里不动。 */
+@media (min-width: 641px) {
+  .site-header,
+  body.mode-daily .site-header {
+    padding: 10px max(24px, calc((100% - 1160px) / 2 + 24px));
+  }
+}
+
+/* 「全部卡片」网格只露出 4 周（7 列 × 4 行 = 28 天），其余上下滚动。
+   单元格自然高约 148px：4 行 ≈ 628px，5 行 ≈ 788px，
+   680px 正好卡在两者之间，所以永远只露 4 行。 */
+.card-grid {
+  max-height: 680px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(79, 93, 117, 0.35) transparent;
+}
+
+@media (min-width: 981px) {
+  /* 回到原来的两列结构：左列吃满剩余宽度、右列贴右缘、间距 44。
+     只把卡片在列内从"居中"改成左对齐并留出左内边距（原来居中时是 164px）。 */
+  .showcase {
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 44px;
+    align-items: stretch;
+  }
+
+  .card-wrap {
+    justify-items: start;
+    padding-left: 80px;
+  }
+
+  .context-panel {
+    height: 100%;
+    min-height: 0;
+    /* 侧栏是 sticky 的，但高度原来跟着内容一起长：栅格行被撑高，
+       .week-list 的 scrollHeight 永远等于 clientHeight，滚动条永远不出现。
+       这里给它一个明确上限，列表才真的滚得动（滚轮停在侧栏上时滚的是它）。
+       上限取「卡片高度档位」与「一屏可见高度」的较小值：
+       视口够高时侧栏不超出卡片那一行，整页排版不变；视口矮时侧栏不超出屏幕。 */
+    max-height: min(620px, calc(100vh - 40px));
+  }
+
+  .context-panel .dimension-block {
+    flex: 0 0 auto;
+  }
+
+  /* 空间够时行高长到 96px 并用行间距铺满卡片高度（首行贴顶、末行贴底）；
+     装不下时退回 72px 底高并滚动。 */
+  .context-panel .week-list {
+    flex: 1 1 auto;
+    min-height: 0;
+    grid-auto-rows: minmax(72px, 96px);
+    align-content: space-between;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(79, 93, 117, 0.35) transparent;
+  }
+}
+
+
+/* ===== 全学科审核修复（2026-10-12） ===== */
+
+/* 修复1 · 选中那一周的文字对比度
+   默认（深色）模式下，选中项的底色是 --week-soft（浅色），
+   而 .context-panel span/strong/p 把文字统一设成了 --color-text-primary-soft（亮奶油），
+   实测「第1周」只有 1.09:1，等于看不见。这里把选中项的文字改回深色。
+   日常模式本来就是深色文字，这条对它无影响。 */
+.week-item.active .week-item-copy strong,
+.week-item.active .week-item-copy span,
+.week-item.active .week-item-copy p,
+.week-item.active p {
+  color: var(--color-light-text);
+}
+
+/* 修复2 · 键盘焦点可见
+   卡片是 role="button" tabindex="0"，但 .card 写了 outline: none，
+   全站也没有任何 :focus 规则 —— 键盘 Tab 过去屏幕上没有任何变化。
+   用「白圈 + 深色外晕」双层描边，保证在深底和浅底上都看得见。 */
+.card:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(23, 19, 16, 0.85);
+}
+
+/* 页面里滚动的是 <html>，键盘翻页时不要把焦点圈裁掉 */
+html {
+  scroll-padding-top: 24px;
+}
+
+
+/* ===== 全学科审核修复（2026-10-12）· 第二批：深浅模式配对 =====
+   styles.css 里有 base(浅) 与 深色 两套同选择器的主题块，后来又追加了几层 !important 覆盖，
+   于是留下一批「深底配深字 / 浅底配浅字」。下面按「每个容器实际的底色」重新配字色，
+   用的是会跟着模式走的语义 token，一次覆盖两种模式。 */
+
+/* 修复3 · 全年结构（用户报告的「送礼模式下看不清」）
+   .year-week 的底色是 --color-surface（送礼深 #241E19 / 日常浅 #FFFDF8），
+   原来却固定写 --color-light-text（两种模式都是深色 #211C18）→ 送礼模式实测 1.02:1。
+   --color-text-primary 会跟着模式翻转，正好配得上。 */
+.week-item,
+.grid-day,
+.year-week,
+.dialogue-card,
+.right-item,
+.yw-week,
+.yw-label {
+  color: var(--color-text-primary) !important;
+}
+
+/* 修复4 · 页脚：底色恒为 --color-bg-deeper（深），字应恒为 --color-header-text
+   （送礼 #F7ECDD / 日常 #F8F3EA），而不是 --color-text-on-dark（日常被改成深色 → 1.09:1） */
+.site-footer,
+.site-footer span,
+.site-footer strong,
+.footer span {
+  color: var(--color-header-text) !important;
+}
+
+/* 修复5 · 朱砂底上的字：该用 --color-text-on-action（送礼 #F7ECDD / 日常 #FFFFFF），
+   而不是 --color-text-on-dark（日常被改成 #211C18 → 深字压红底 2.55:1） */
+.gift-tag,
+.dimension-badge,
+.dimension-icon,
+.month-badge,
+.gift-eyebrow,
+.trial-banner-tag,
+.paywall-kicker {
+  color: var(--color-text-on-action) !important;
+}
+
+/* 修复6 · 月度导航那一行的「第 1 / 12月」：继承链上拿到了深色（送礼模式深底深字 1.09:1） */
+.monthly-nav,
+.monthly-nav span {
+  color: var(--color-text-primary) !important;
+}
+
+/* 修复7 · 礼盒卡片：底色恒为 --color-light-surface（两种模式都浅），字恒用 --color-light-text */
+.gift-card,
+.gift-card h3,
+.gift-card p {
+  color: var(--color-light-text) !important;
+}
+
+/* 修复8 · 礼盒暗盒 .gift-box：送礼模式深底浅字、日常模式浅底深字，
+   这里统一走 --color-text-primary，压过 hero 那几条强制白字 */
+.gift-box,
+.gift-box-title,
+.gift-box ul,
+.gift-box li {
+  color: var(--color-text-primary) !important;
+}
+
+/* 修复9 · 卡面大号日期：app.js 把 --accent 内联固定成 #D9A27F（为深色卡设计的暖金），
+   而日常模式的卡片是浅底 → 2.02:1。日常模式把 --accent 换回朱砂主色。
+   （内联自定义属性只能用样式表里的 !important 压过） */
+body.mode-daily .card {
+  --accent: var(--color-action-primary) !important;
+}
+
+/* 修复10 · 四幕故事里的「历史 · 制度脉络」小标签
+   底色是维度色、字用 var(--color-white)，但深色主题块把 --color-white 改成了 #F7ECDD，
+   压在维度色上只有 4.45:1。这里显式用纯白（对新色板的最小值也有 5.0:1）。 */
+.story-dims span {
+  color: #FFFFFF !important;
+}
+
+/* 修复11 · 礼盒区里的卡片与暗盒（`.gift-card` / `.gift-box` 都在 `.gift-hero` 内部）
+   日常模式下 styles.css 有一条 `body.mode-daily .gift-hero p { color:#FFFFFF !important }`
+   比我的通用规则更具体，会把浅底上的字刷成白色（1.10:1）。
+   这两处底色在两种模式下都是浅的，所以按浅底配深字，选择器提到同等具体度。 */
+body.mode-daily .gift-hero .gift-card,
+body.mode-daily .gift-hero .gift-card h3,
+body.mode-daily .gift-hero .gift-card p,
+body.mode-daily .gift-hero .gift-box,
+body.mode-daily .gift-hero .gift-box-title,
+body.mode-daily .gift-hero .gift-box ul,
+body.mode-daily .gift-hero .gift-box li {
+  color: var(--color-light-text) !important;
+}
+
+
+/* ===== 全学科审核修复（2026-10-12）· 第三批：季度自我对话 =====
+   问题：这一栏是全场最"空"的一块 —— 容器 1112px 宽，内容只占 24%（269px），
+   高度却 1077px（比全年结构的 601、月度扉页的 709 都高）。
+   原因：.quarterly-grid 还是 `repeat(4, 1fr)`（styles.css:1180），那是给
+   app.js 版的「四张空白参与卡」写的；而线上实际渲染的是 content-experience.js 的
+   一整块面板（.quarterly-experience，只有一个子元素），于是它只吃到 1/4 的宽度，
+   剩下的宽度全长成了高度。 */
+
+/* 1 · 整块面板横跨整行，不再被四列栅格切成 1/4 */
+.quarterly-experience {
+  grid-column: 1 / -1;
+}
+
+/* 2 · 宽度回来之后，四个问题两列排，别拉成一条长柱 */
+@media (min-width: 900px) {
+  .quarterly-questions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 3 · 输入框在宽屏下不必那么高，一行 56px 够写一句话 */
+@media (min-width: 900px) {
+  .quarterly-questions textarea {
+    min-height: 56px;
+  }
+}
+
+
+/* 修复4 · 里程碑通关卡：7 张卡排成 5+2，第二行右侧空出三格
+   原来 `.milestone-grid` 是 `repeat(auto-fit, minmax(210px, 1fr))`，
+   1112px 容器下刚好排 5 列，7 张卡就变成 5+2，右边空 674px²（实测）。
+   实测过的几种排法：
+     7 列一行  → 无空洞，但卡片被压到 149px 宽、高 360px，像一排细高塔
+     6 列      → 6+1，更糟（空洞 937）
+     4 列栅格  → 4+3，空洞仍然全堆在右侧（281）
+     flex 末行拉伸 → 无空洞，但末行两张被拉成 550px 宽的胖卡，比例失衡
+   最终取「一行 4 张、末行居中、卡片等宽」：空洞均分到两侧，看起来是有意留白。 */
+.milestone-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.milestone-card {
+  flex: 1 1 240px;
+  max-width: 272px;
+}
+
+/* 手机上让里程碑卡占满一行，别在两边各留一条 */
+@media (max-width: 620px) {
+  .milestone-card {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+}
+
+/* 修复5 · 里程碑卡标题改写后，卡片正文里就没有脉络名字了。
+   补一个脉络标签（“历史 · 制度地图”），用该维度的颜色。
+   实测七个维度色在卡片底色 #FFFDF8 上对比度 5.10–5.19，均过 AA。 */
+.milestone-kicker {
+  display: block;
+  margin: 0 0 4px;
+  color: var(--milestone-color);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.5;
+}

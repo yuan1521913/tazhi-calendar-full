@@ -1,0 +1,276 @@
+:root {
+  --ink: #211C18;
+  --paper: #F4EFE7;
+  --paper-2: #FFFDF8;
+  --red: #A7342E;
+  --blue: #2F4F6E;
+  --gold: #B98A4E;
+  --green: #6B7F6E;
+  --line: rgba(33, 28, 24, 0.14);
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+body {
+  padding-bottom: 48px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fun-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px 20px 8px;
+}
+
+.fun-brand {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.fun-back {
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.fun-tag {
+  padding: 4px 10px;
+  border: 1px solid var(--red);
+  border-radius: 999px;
+  color: var(--red);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.fun-main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.fun-hero {
+  padding: 32px 0 22px;
+  text-align: center;
+}
+
+.fun-eyebrow {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.fun-hero h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.fun-sub {
+  margin: 12px auto 22px;
+  max-width: 440px;
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.fun-draw {
+  min-height: 54px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--red);
+  color: #FFFFFF;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(167, 52, 46, 0.18);
+}
+
+.fun-card {
+  position: relative;
+  width: min(420px, 100%);
+  min-height: 330px;
+  margin: 0 auto;
+  padding: 28px 24px 24px;
+  border-radius: var(--radius);
+  background: var(--paper-2);
+  border: 1px solid #D8C4A8;
+  box-shadow: 0 12px 28px rgba(45, 37, 32, 0.1);
+  text-align: center;
+  transition: transform 0.18s ease;
+}
+
+.fun-card.drawing {
+  animation: pop 0.35s ease;
+}
+
+@keyframes pop {
+  0% { transform: rotate(-2deg) scale(0.97); opacity: 0.7; }
+  100% { transform: rotate(0deg) scale(1); opacity: 1; }
+}
+
+.fun-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #D8C4A8;
+}
+
+.fun-day {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--red);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.fun-dimension {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #FFFFFF;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.fun-title {
+  margin: 24px 0 10px;
+  font-size: 24px;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.fun-quote {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Kaiti SC", "KaiTi", serif;
+  font-size: 17px;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.fun-action {
+  margin: 22px 0 18px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--green);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: #EDF0E9;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: left;
+  white-space: pre-line;
+}
+
+.fun-share {
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid var(--red);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--red);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.fun-status {
+  min-height: 22px;
+  margin: 10px 0 0;
+  color: var(--green);
+  font-size: 13px;
+}
+
+.fun-cta {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: #F7ECDD;
+  text-align: center;
+}
+
+.fun-cta p {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.fun-cta a {
+  display: inline-block;
+  color: #F7ECDD;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.fun-cta a + a {
+  margin-left: 14px;
+}
+
+.fun-cta-secondary {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid #F7ECDD;
+  border-radius: var(--radius);
+  color: #F7ECDD;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.fun-cta-secondary:hover {
+  background: #F7ECDD;
+  color: var(--ink);
+}
+
+@media (max-width: 520px) {
+  .fun-main {
+    padding: 0 16px;
+  }
+
+  .fun-hero h1 {
+    font-size: 28px;
+  }
+
+  .fun-card {
+    min-height: 340px;
+    padding: 22px 18px 20px;
+  }
+
+  .fun-title {
+    font-size: 20px;
+  }
+
+  .fun-action {
+    padding: 12px;
+  }
+
+  .fun-cta a {
+    margin: 4px 0;
+  }
+}

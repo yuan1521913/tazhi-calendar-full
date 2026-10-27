@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211C18">
+  <meta name="description" content="她知 · 2026：给女儿、妹妹、闺蜜或自己一份不说教、可验证的制度底气。">
+  <title>她知 · 送她底气</title>
+  <link rel="stylesheet" href="gift.css">
+</head>
+<body>
+  <header class="gift-header">
+    <div class="gift-brand">
+      <span class="brand-mark" aria-hidden="true">她知</span>
+      <span>
+        <strong>她知 · 制度日历</strong>
+        <small>她知 · 2026 送礼版</small>
+      </span>
+    </div>
+    <nav class="gift-nav" aria-label="主导航">
+      <a href="home.html">首页</a>
+      <a href="index.html">看全部365天</a>
+      <a href="index.html">全部开放</a>
+      <a href="trust.html">信任与退款</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="gift-hero" aria-label="送礼与免费预览">
+      <div class="gift-hero-copy">
+        <p class="gift-eyebrow">离火之年 · 送一份不说教的底气</p>
+        <h1>不是让她学会什么，<br>是让她遇事时手里有依据。</h1>
+        <p class="gift-lead">她知把说不清的委屈，翻译成看得懂的规则。每天一张卡：规则是什么、来源在哪里、今天能做什么。</p>
+        <div class="gift-hero-actions">
+          <a class="btn btn-primary" href="index.html">看全部365天</a>
+          <a class="btn btn-ghost" href="#composer">去写附言</a>
+        </div>
+        <ul class="gift-trust">
+          <li>365天已全部开放</li>
+          <li>不用付款，也不用解锁码</li>
+          <li>前49天已完成人工复核</li>
+          <li>不制造焦虑</li>
+        </ul>
+      </div>
+      <aside class="gift-draw" aria-label="真实卡片预览">
+        <span class="gift-draw-kicker">第06天 · 法律 · 职场</span>
+        <h2>面试被问婚育，答案不是忍，是法条。</h2>
+        <p>你可以不回答，也可以保留记录；这不是“较真”，是边界。</p>
+        <p class="gift-draw-action">今日行动：把聊天记录和邮件保存到独立文件夹，并查一次12338 的适用场景。</p>
+      </aside>
+    </section>
+
+    <section id="composer" class="composer" aria-label="写一张底气附言">
+      <div class="composer-head">
+        <p class="kicker">先写附言，再决定买什么</p>
+        <h2>你送的不是课程，是一句“我支持你”。</h2>
+      </div>
+      <div class="composer-grid">
+        <div class="composer-form">
+          <label class="composer-label" for="recipient">送给谁</label>
+          <div id="recipientPicker" class="recipient-picker" role="group" aria-label="选择收礼人">
+            <button type="button" data-person="daughter" class="active">女儿 / 妹妹</button>
+            <button type="button" data-person="self">自己</button>
+            <button type="button" data-person="friend">闺蜜</button>
+            <button type="button" data-person="mother">妈妈</button>
+          </div>
+          <label class="composer-label" for="noteInput">附言（可留空）</label>
+          <textarea id="noteInput" rows="4" maxlength="80" placeholder="例如：给你一份不说教的支持，你遇事时记得先找依据。"></textarea>
+          <p id="noteCount" class="note-count">0 / 80</p>
+          <div class="composer-actions">
+            <button id="copyNoteBtn" class="btn btn-ghost" type="button">复制附言</button>
+            <a class="btn btn-primary" href="index.html">送她一份直接能看的底气</a>
+          </div>
+          <p id="copyStatus" class="copy-status" role="status"></p>
+        </div>
+        <article class="note-preview" aria-live="polite">
+          <span class="note-preview-person" id="previewPerson">给女儿 / 妹妹</span>
+          <h3 id="previewTitle">遇事时，先知道自己有什么依据。</h3>
+          <p id="previewText">给你一份不说教的支持，你遇事时记得先找依据。</p>
+          <span class="note-preview-sign">她知 · 2026</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="steps" aria-label="送礼流程">
+      <div class="steps-inner">
+        <div class="section-head">
+          <p class="kicker">妈妈 / 长辈怎么送</p>
+          <h2>三步，不用教她“做人”。</h2>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span>01</span>
+            <h3>她先看完整365天</h3>
+            <p>扫码就能看，不需要注册，不需要先付款。</p>
+          </article>
+          <article class="step-card">
+            <span>02</span>
+            <h3>你写一句附言</h3>
+            <p>附言卡不是教育，是“我知道你会有用得到的时候”。</p>
+          </article>
+          <article class="step-card">
+            <span>03</span>
+            <h3>她直接就能看</h3>
+            <p>365天已全部开放，不用付款，也不用解锁码，把链接发给她就够了。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="信任保障">
+      <div class="trust-item"><strong>来源可查</strong><span>关键卡标注来源、更新与边界</span></div>
+      <div class="trust-item"><strong>全部开放</strong><span>365天内容直接可看，无需付费</span></div>
+      <div class="trust-item"><strong>不再收款</strong><span>购买入口已停用</span></div>
+      <div class="trust-item"><strong>可自验</strong><span>用户可以自己核对官方入口</span></div>
+    </section>
+  </main>
+
+  <footer class="gift-footer">
+    <span>她知 · 制度日历 · 看得懂制度，才有真正的底气</span>
+    <span><a href="home.html">首页</a> · <a href="trust.html">信任与退款</a></span>
+  </footer>
+
+  <script src="launch-config.js"></script>
+  <script src="gift.js"></script>
+</body>
+</html>

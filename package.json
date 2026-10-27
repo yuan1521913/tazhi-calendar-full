@@ -1,0 +1,19 @@
+{
+  "name": "tazhi-calendar-full",
+  "version": "1.2.0",
+  "description": "她知 · 制度日历 —— 365 天公开完整版：代码 MIT，原创内容仅限公开查看",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "preview": "node scripts/dev-server.mjs",
+    "cloudbase": "node server.mjs"
+  },
+  "dependencies": {
+    "@cloudbase/node-sdk": "^4.0.3",
+    "@netlify/blobs": "9.1.5",
+    "@vercel/kv": "^3.0.0",
+    "pg": "^8.23.0"
+  }
+}

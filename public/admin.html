@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#211C18">
+  <title>她知 · 订单管理</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="admin-header">
+    <span class="admin-title">她知 · 订单与解锁码管理</span>
+    <button id="logoutBtn" class="ghost" type="button" hidden>退出</button>
+  </header>
+
+  <main class="admin-main">
+    <section id="loginPanel" class="panel">
+      <h1>管理员登录</h1>
+      <div class="login-row">
+        <input id="tokenInput" type="password" placeholder="ADMIN_TOKEN" autocomplete="current-password">
+        <button id="loginBtn" type="button">进入管理台</button>
+      </div>
+      <p id="loginStatus" class="toast"></p>
+    </section>
+
+    <section id="adminPanel" hidden>
+      <div class="tabs">
+        <button id="ordersTab" class="tab active" type="button">订单</button>
+        <button id="codesTab" class="tab" type="button">解锁码</button>
+      </div>
+
+      <section id="ordersView" class="panel">
+        <h2>订单</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>订单号</th>
+                <th>商品</th>
+                <th>金额</th>
+                <th>状态</th>
+                <th>权限</th>
+                <th>解锁码</th>
+                <th>创建时间</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="ordersBody"></tbody>
+          </table>
+        </div>
+        <p id="ordersStatus" class="toast"></p>
+      </section>
+
+      <section id="codesView" class="panel" hidden>
+        <h2>解锁码</h2>
+        <div class="form-row">
+          <label for="codeCount">数量</label>
+          <input id="codeCount" type="text" inputmode="numeric" value="5">
+          <label for="codeScope">权限</label>
+          <select id="codeScope">
+            <option value="month2">第二个月56天</option>
+            <option value="full365" selected>全年365天</option>
+          </select>
+          <button id="generateCodesBtn" type="button">生成解锁码</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>解锁码</th>
+                <th>权限</th>
+                <th>状态</th>
+                <th>订单号</th>
+                <th>创建时间</th>
+                <th>使用时间</th>
+              </tr>
+            </thead>
+            <tbody id="codesBody"></tbody>
+          </table>
+        </div>
+        <p id="codesStatus" class="toast"></p>
+      </section>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211C18">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>她知 · 制度日历</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="tools.css">
+  <link rel="stylesheet" href="product-fixes.css">
+  <link rel="stylesheet" href="content-experience.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">她知</div>
+      <div class="brand-copy">
+        <h1>她知 · 制度日历 · 一年后你将拥有完整的制度认知体系</h1>
+      </div>
+    </div>
+    <div class="header-tools">
+      <label class="search-box">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+        <input id="sceneSearch" type="search" placeholder="搜索场景，如：被辞退、面试被问婚育、家暴、继承">
+      </label>
+      <div id="searchResults" class="search-results" hidden></div>
+      <p id="todayHint" class="today-hint" hidden></p>
+    </div>
+  </header>
+
+  <main>
+    <section class="gift-hero" aria-label="底气礼物">
+      <div class="gift-hero-copy">
+        <p class="gift-eyebrow">她知 · 底气礼物</p>
+        <h2>六个人生处境，七条制度脉络，送给值得拥有底气的她。</h2>
+        <p class="gift-lead">这不是一份知识日历，是一件拿得出手、送得出去、验证得过的底气礼物。</p>
+        <div class="gift-actions">
+          <button type="button" class="gift-btn" onclick="enterCardPage()">打开365天日历，再决定送谁</button>
+          <button type="button" class="gift-btn ghost" onclick="document.querySelector('.gift-grid')?.scrollIntoView({behavior:'smooth'})">看礼盒内容</button>
+        </div>
+      </div>
+      <div class="gift-grid" aria-label="送礼对象">
+        <article class="gift-card">
+          <span class="gift-tag">送自己</span>
+          <h3>看得懂制度</h3>
+          <p>不再被规则牵着走，在婚姻、职场、母职、财产里，心里有数。</p>
+        </article>
+        <article class="gift-card">
+          <span class="gift-tag">送女儿 / 妹妹</span>
+          <h3>从第一天就知道</h3>
+          <p>她不是孤身一人，她的今天，是很多女人争来的。</p>
+        </article>
+        <article class="gift-card">
+          <span class="gift-tag">送闺蜜 / 职场她</span>
+          <h3>手里有牌</h3>
+          <p>遇到规则和关系的暗处，她知道该查什么、该存什么、该说什么。</p>
+        </article>
+      </div>
+      <div class="gift-box">
+        <p class="gift-box-title">底气礼盒包含</p>
+        <ul>
+          <li>六个人生处境</li>
+          <li>制度认知卡 · 按月更新</li>
+          <li>法律底气卡</li>
+          <li>手写附言卡</li>
+          <li>每日验证点</li>
+          <li>我的权利清单</li>
+        </ul>
+      </div>
+    </section>
+    <div class="trial-banner">
+    <span class="trial-banner-tag">免费试用</span>
+    <span>365天全部开放 · 前49天完成复核 · 316天资料稿</span>
+  </div>
+  <div class="first-screen-promise">
+    <div class="promise-item"><strong>现在直接查看</strong><span>第1-365天完整卡片，全部开放</span></div>
+      <div class="promise-item"><strong>需要付费吗</strong><span>已全部开放，无需付款</span></div>
+    <div class="promise-item"><strong>能不能退</strong><span>数字版3天内可协商退款</span></div>
+    <a class="primary-cta" href="#card">打开365天日历</a>
+  </div>
+<div class="card-toolbar">
+      <div class="day-nav" aria-label="卡片翻页">
+        <button id="prevBtn" class="icon-btn" type="button" aria-label="上一张">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+        </button>
+        <div class="day-identity">
+          <span id="weekLabel">第1周 · 历史 · 制度地图</span>
+          <div class="day-main-line">
+            <strong id="dayNumber">第01天</strong>
+            <span id="dayDow">周一</span>
+          </div>
+        </div>
+        <button id="nextBtn" class="icon-btn" type="button" aria-label="下一张">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+      <div class="card-actions">
+        <button id="flipBtn" class="action-btn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10M13 4l4 4-4 4M17 16H7m4-4l-4 4 4 4"></path></svg>
+          <span>翻转</span>
+        </button>
+        <button id="todayBtn" class="action-btn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4M16 3v4M3 11h18"></path></svg>
+          <span>今日</span>
+        </button>
+        <button id="saveRightBtn" class="action-btn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4z"></path></svg>
+          <span>加入权利清单</span>
+        </button>
+        <button id="usefulBtn" class="action-btn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"></path></svg>
+          <span>有用</span>
+        </button>
+        <button id="modeToggle" class="action-btn toolbar-secondary" type="button" title="送礼模式 / 日常模式">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.1 4.5 4.9.7-3.6 3.5.9 4.9-4.3-2.3-4.3 2.3.9-4.9L5 8.2l4.9-.7z"></path></svg>
+          <span id="modeLabel">日常模式</span>
+        </button>
+        <button id="lightModeBtn" class="action-btn toolbar-secondary" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+          <span>轻模式</span>
+        </button>
+        <button id="printBtn" class="action-btn toolbar-secondary" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z"></path></svg>
+          <span>打印</span>
+        </button>
+        <button id="largeModeBtn" class="action-btn toolbar-secondary" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14M12 5v14M8 19h8"></path></svg>
+          <span>大字</span>
+        </button>
+        <button id="shareBtn" class="action-btn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13"></path></svg>
+          <span>分享卡片</span>
+        </button>
+        <a class="action-btn" href="#toolsSection">工具箱</a>
+        <a class="action-btn" href="fun.html">返回抽卡页</a>
+        <button id="moreToolsBtn" class="action-btn" type="button">更多</button>
+        <div id="rightNoteBox" class="right-note-box" hidden>
+          <input id="rightNoteInput" type="text" placeholder="为什么这条对你重要？">
+          <button id="rightNoteSave" type="button">记下</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="socialProof" class="social-proof" hidden></div>
+
+    <section class="showcase" aria-label="今日卡片">
+      <div class="card-wrap">
+        <article id="card" class="card" role="button" tabindex="0" aria-label="翻转当前卡片">
+          <div class="card-inner">
+            <div class="face front">
+              <div class="face-top">
+                <span id="dimensionGlyph" class="dimension-badge">史</span>
+                <div class="dimension-copy">
+                  <strong id="dimensionName">历史</strong>
+                  <span id="dimensionQuestion">我从哪里来？</span>
+                </div>
+                <span class="review-badge" data-review-badge hidden>待复核</span>
+              </div>
+              <div class="face-center">
+                <div id="frontDayNumber" class="day-number">01</div>
+                <div id="frontDayDow" class="day-dow">周一</div>
+              </div>
+              <div id="frontText" class="front-text"></div>
+              <h2 id="frontTitle" class="face-title">天足运动——100年前的女人开始放脚</h2>
+              <p id="frontQuote" class="face-quote">裹脚不是传统，是束缚。放脚不是叛逆，是解放。</p>
+            </div>
+            <div class="face back">
+              <div class="back-meta">
+                <span id="backDayNumber">第01天</span>
+                <span id="backDow">周一</span>
+                <span class="review-badge" data-review-badge hidden>待复核</span>
+              </div>
+              <h2 id="backTitle" class="back-title">天足运动——100年前的女人开始放脚</h2>
+              <div id="knowledgeWrap" class="knowledge-wrap">
+                <span id="knowledgeLabel" class="section-label">制度依据</span>
+                <p id="knowledgeText" class="knowledge-text"></p>
+                <div class="back-section">
+                  <span id="relatedLabel" class="section-label">与我有关</span>
+                  <p id="relatedText"></p>
+                </div>
+                <div class="back-section">
+                  <span id="actionLabel" class="section-label">今日行动</span>
+                  <p id="actionText"></p>
+                </div>
+                <div class="back-section boundary-section">
+                  <span id="boundaryLabel" class="section-label">边界</span>
+                  <p id="boundaryText"></p>
+                </div>
+                <div id="legalMeta" class="legal-meta"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <aside class="context-panel" aria-label="制度脉络与本周">
+        <div id="dimensionBlock" class="dimension-block">
+          <div class="dimension-icon" id="dimensionIcon">史</div>
+          <div>
+            <span id="panelDimensionName">历史 · 制度脉络</span>
+            <strong id="panelDimensionQuestion">我从哪里来？</strong>
+            <p id="panelWeekLabel">第1周 · 共7周</p>
+          </div>
+        </div>
+        <div class="week-list" id="weekList"></div>
+      </aside>
+    </section>
+
+    <section class="section grid-section" aria-label="全部卡片目录">
+      <div class="section-heading">
+        <h2>全部卡片 · 365天目录</h2>
+        <span id="gridCaption">点任意一天直接翻到 · 前49天已完成人工复核</span>
+      </div>
+      <div id="grid" class="card-grid"></div>
+    </section>
+
+    <section class="section trial-upgrade-section" aria-label="内容开放说明">
+      <div class="trial-upgrade-card">
+        <span class="trial-upgrade-kicker">她知 · 制度日历</span>
+        <h2>365天已全部开放</h2>
+        <p>不需要解锁码，也不需要付款。前49天已完成人工复核，其余316 张标注「已补写 · 待复核」，现在就可以读。</p>
+        <p class="trial-price"><strong>全部开放</strong> · 直接翻到任意一天</p>
+      </div>
+    </section>
+
+    <section class="section rights-section" aria-label="我的权利清单">
+      <div class="section-heading">
+        <h2>我的权利清单</h2>
+        <span id="rightsCount">0条</span>
+      </div>
+      <div id="rightsList" class="rights-list"></div>
+    </section>
+
+    <section class="section contradiction-section" aria-label="月度矛盾卡片">
+      <div class="section-heading">
+        <h2>每月矛盾卡</h2>
+        <span>不选也可以 · 每月一张</span>
+      </div>
+      <div id="contradictionWrap" class="contradiction-wrap"></div>
+    </section>
+
+    <section class="section dialogue-section" aria-label="代际对话卡">
+      <div class="section-heading">
+        <h2>给女儿和妈妈的对话卡</h2>
+        <span>不急着答完，一次聊一个</span>
+      </div>
+      <div class="dialogue-grid">
+        <article class="dialogue-card"><h3>第一问</h3><p>你结婚的时候，是自己选的吗？</p></article>
+        <article class="dialogue-card"><h3>第二问</h3><p>你第一次工作时，工资是多少？当时的女同事多吗？</p></article>
+        <article class="dialogue-card"><h3>第三问</h3><p>你小时候，有没有被告诉过“女孩子不能做某事”？后来呢？</p></article>
+      </div>
+    </section>
+    <section class="section story-section" aria-label="四幕故事线">
+      <div class="section-heading">
+        <h2>四幕故事线</h2>
+        <span>从认知到行动</span>
+      </div>
+      <div id="storyGrid" class="story-grid"></div>
+    </section>
+
+    <section class="section milestone-section" aria-label="里程碑通关卡">
+      <div class="section-heading">
+        <h2>里程碑通关卡</h2>
+        <span>七条制度脉络 · 七次抵达</span>
+      </div>
+      <div id="milestoneGrid" class="milestone-grid"></div>
+    </section>
+
+    <section class="section quarterly-section" aria-label="季度空白参与卡">
+      <div class="section-heading">
+        <h2>季度自我对话</h2>
+        <span>回看90天 · 不急着答完</span>
+      </div>
+      <div id="quarterlyGrid" class="quarterly-grid"></div>
+    </section>
+
+
+    <section class="section year-section" aria-label="全年结构">
+      <div class="section-heading">
+        <h2>全年结构</h2>
+        <span>七条制度脉络 × 52周 + 1天综述</span>
+      </div>
+      <div id="yearGrid" class="year-grid"></div>
+    </section>
+
+    <section class="section monthly-section" aria-label="月度扉页">
+      <div class="section-heading">
+        <h2>月度扉页 · 本月地图</h2>
+        <span>每月第一天，进入新一章</span>
+      </div>
+      <div id="monthlyGrid" class="monthly-grid"></div>
+    </section>
+
+    <section class="tools-section" id="toolsSection">
+      <div class="tools-head">
+        <h2>我的制度工具箱</h2>
+        <span>使用说明 · 号码速查 · 认知地图 · 52周记录</span>
+      </div>
+      <div id="toolsRoot"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>她知 · 制度日历</span>
+    <span>送给那个值得拥有底气的她。</span>
+  </footer>
+
+  <div id="paywall" class="paywall" hidden>
+    <div id="paywallBackdrop" class="paywall-backdrop"></div>
+    <div class="paywall-card" role="dialog" aria-modal="true" aria-labelledby="paywallTitle">
+      <button id="paywallClose" class="paywall-close" type="button" aria-label="关闭">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+      </button>
+      <span class="paywall-kicker">她知 · 底气礼盒</span>
+      <div class="paywall-day"><span id="paywallDayBadge">08</span><span>全年内容</span></div>
+      <h2 id="paywallTitle">365天已全部开放</h2>
+      <p id="paywallCopy" class="paywall-copy">内容对所有人开放，不需要解锁码，也不需要付款。</p>
+      <p id="paywallPrice" class="paywall-price"></p>
+      <p id="paywallDelivery" class="paywall-delivery"></p>
+      <ul class="paywall-list">
+        <li>365天卡片全部开放</li>
+        <li>前49天已完成人工复核</li>
+        <li>其余卡片标注「已补写 · 待复核」</li>
+        <li>关键法条与地方政策人工终审中</li>
+        <li>法条线索、行动步骤、权利清单</li>
+      </ul>
+      <div class="unlock-row">
+        <input id="unlockInput" type="text" autocomplete="off" placeholder="输入解锁码">
+        <button id="unlockSubmit" type="button">解锁</button>
+      </div>
+      <button id="paywallBuy" class="paywall-btn" type="button">在线购买 · 自动发码</button>
+      <p id="paywallStatus" class="paywall-status"></p>
+    </div>
+  </div>
+
+  <script src="/api/content"></script>
+  <!-- 2026-10-12 全学科审核：safety-layer / dedupe-layer / title-layer 三个运行时补丁已停用。
+       它们会覆盖 data.js 里已经维护好的 safetyNote / localNote / source / title，
+       并给 144 张卡的知识区追加模板填充句。详见 public/app.js 顶部说明。 -->
+  <script src="daily-questions.js"></script>
+  <script src="tools.js"></script>
+  <script src="content-layer.js"></script>
+  <script src="launch-config.js"></script>
+  <script src="aesthetics.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" async></script>
+  <script src="gif.js"></script>
+  <script src="app.js"></script>
+  <script src="content-experience.js"></script>
+</body>
+</html>

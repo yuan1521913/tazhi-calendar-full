@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211C18">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>她知 · 今日底气签</title>
+  <link rel="stylesheet" href="fun.css">
+</head>
+<body>
+  <header class="fun-header">
+    <span class="fun-brand">她知</span>
+    <span class="fun-tag">今日底气签</span>
+    <a class="fun-back" href="home.html">返回首页</a>
+  </header>
+
+  <main class="fun-main">
+    <section class="fun-hero">
+      <p class="fun-eyebrow">先玩，不急着决定</p>
+      <h1>今天抽一张，<br>看看哪条规则和你有关。</h1>
+      <p class="fun-sub">不用背法条，抽到哪张，今天就看哪张。</p>
+      <button id="drawBtn" class="fun-draw" type="button">抽一张</button>
+    </section>
+
+    <section id="card" class="fun-card" aria-live="polite">
+      <div class="fun-card-top">
+        <span id="dayNumber" class="fun-day">01</span>
+        <span id="dimensionName" class="fun-dimension">历史</span>
+      </div>
+      <h2 id="cardTitle" class="fun-title">天足运动——100年前的女人开始放脚</h2>
+      <p id="cardQuote" class="fun-quote">裹脚不是传统，是束缚。放脚不是叛逆，是解放。</p>
+      <div id="cardAction" class="fun-action">今天，把这句话告诉一个她。</div>
+      <button id="shareBtn" class="fun-share" type="button">转发给那个她</button>
+      <p id="shareStatus" class="fun-status"></p>
+    </section>
+
+    <section class="fun-cta">
+      <p>365天已全部开放，抽完直接去看。</p>
+      <a href="home.html">回到首页</a>
+      <a href="index.html">去看完整日历</a>
+      <a class="fun-cta-secondary" href="index.html">看全部365天</a>
+    </section>
+  </main>
+
+  <script src="/api/content"></script>
+  <script src="fun.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211C18">
+  <title>她知 · 制度日历 · 已全部开放</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <header class="shop-header">
+    <div class="shop-brand">
+      <span class="brand-seal">她知</span>
+      <span>制度日历 · 已全部开放</span>
+    </div>
+    <nav class="shop-nav">
+      <a href="home.html">首页</a>
+      <a href="index.html">打开365天日历</a>
+      <a href="trust.html">信任与退款</a>
+    </nav>
+  </header>
+
+  <main class="shop-main">
+    <section class="shop-intro">
+      <p class="shop-kicker">已全部开放</p>
+      <h1>365天内容现已全部开放，不需要购买</h1>
+      <p>原定的9.9元第二个月与99元全年数字版已经停止售卖，所有卡片直接可看。本页仅保留历史说明，不再产生订单或扣款。</p>
+    </section>
+
+    <section class="product-grid" aria-label="数字版商品">
+      <article class="product-card" data-sku="month2">
+        <div class="product-top">
+          <h2 class="product-name">第二个月<br>第29-56天</h2>
+          <span class="product-tag">低门槛</span>
+        </div>
+        <p class="price">原9.9元 · 已停售</p>
+        <p class="product-desc">第二个月（第29-56天）内容现已随全站一并开放，不需要再购买。</p>
+        <p class="product-delivery">全站开放后不再生成解锁码。</p>
+        <button class="buy-btn" type="button" disabled>已停止售卖</button>
+      </article>
+
+      <article class="product-card recommended" data-sku="full365">
+        <div class="product-top">
+          <h2 class="product-name">全年数字版<br>365天制度日历</h2>
+          <span class="product-tag">主力</span>
+        </div>
+        <p class="price">原99元 · 已停售</p>
+        <p class="product-desc">365天内容现已全部开放，未复核的卡片标注「已补写 · 待复核」。</p>
+        <p class="product-delivery">当前不承诺所有卡片已律师终审。</p>
+        <button class="buy-btn secondary" type="button" disabled>已停止售卖</button>
+      </article>
+    </section>
+
+    <section class="product-grid" aria-label="暂未在线收款">
+      <article class="product-card">
+        <div class="product-top">
+          <h2 class="product-name">实物底气礼盒</h2>
+          <span class="product-tag">暂未开放</span>
+        </div>
+        <p class="price">299元</p>
+        <p class="product-desc">需要真实礼盒图、成本、物流和售后方案后才开放。</p>
+        <p class="product-delivery">暂不收款，避免未兑现交付。</p>
+        <button class="buy-btn" type="button" disabled>等待实物样版</button>
+      </article>
+
+      <article class="product-card">
+        <div class="product-top">
+          <h2 class="product-name">社群 / 企业定制</h2>
+          <span class="product-tag">暂未开放</span>
+        </div>
+        <p class="price">999元起</p>
+        <p class="product-desc">需要人工对接范围、交付方式、发票和企业采购流程。</p>
+        <p class="product-delivery">不开放在线下单，请先联系人工确认。</p>
+        <button class="buy-btn" type="button" disabled>联系人工定制</button>
+      </article>
+    </section>
+
+    <div id="manualPanel" class="manual-panel" hidden>
+      <h2>收银台 · 请扫码付款</h2>
+      <p>订单号：<span id="orderNumber" class="order-number"></span></p>
+      <p class="manual-meta"><span id="manualSku"></span> · 应付 <span id="manualPrice"></span></p>
+      <div class="qr-row">
+        <p class="manual-meta">演示版不包含收款码，请自行配置支付方式。</p>
+      </div>
+      <p id="manualMessage" class="status-line"></p>
+      <a id="orderLink" class="primary-link" href="#">查看订单状态</a>
+      <p id="mockCode" class="mock-code" hidden></p>
+      <button id="mockPayBtn" class="mock-pay-btn" type="button" hidden>模拟支付成功（测试）</button>
+      <p id="mockPayNote" class="mock-pay-note" hidden>仅测试流程，不产生真实扣款。</p>
+    </div>
+
+    <p id="pageStatus" class="status-line" role="status"></p>
+
+    <section class="shop-notes">
+      <strong>交付说明：</strong>内容现已全部开放，无需解锁码；早前购买过的订单如需退款，请联系原收款渠道处理。本产品是制度认知科普，不构成法律意见；具体个案请咨询官方热线或律师。
+      <div class="shop-links"><a href="index.html">直接去看365天</a> · <a href="trust.html">查看隐私与内容边界</a></div>
+    </section>
+  </main>
+
+  <footer class="shop-footer">她知 · 制度日历 · 看得懂制度，才有真正的底气</footer>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+/* 她知 · 数字体验层 */
+
+.experience-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(18, 14, 11, 0.82);
+}
+
+.experience-modal[hidden] {
+  display: none;
+}
+
+.experience-modal-card {
+  width: min(560px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: 30px;
+  border: 1px solid #A9896C;
+  border-radius: 8px;
+  background: #FBF3E2;
+  color: #211C18;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+.experience-modal-card.dark {
+  background: #211C18;
+  color: #F7ECDD;
+}
+
+.experience-modal-card h2 {
+  margin: 0 0 12px;
+  font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+  font-size: 26px;
+  line-height: 1.45;
+}
+
+.experience-modal-card p {
+  margin: 0 0 16px;
+  color: inherit;
+  font-size: 15px;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+.experience-modal-card .modal-note {
+  color: #211C18;
+  font-size: 14px;
+}
+
+.experience-modal-card.dark .modal-note {
+  color: #F7ECDD;
+}
+
+.experience-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.experience-modal-actions button,
+.experience-modal-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid #A7342E;
+  border-radius: 6px;
+  background: #A7342E;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.experience-modal-actions .ghost {
+  background: transparent;
+  color: #211C18;
+}
+
+.experience-modal-card.dark .experience-modal-actions .ghost {
+  color: #F7ECDD;
+}
+
+.monthly-card-layer {
+  display: grid;
+  gap: 12px;
+}
+
+.monthly-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.monthly-nav button {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line, #D8C4A8);
+  border-radius: 6px;
+  background: var(--surface, #FFFDF8);
+  color: var(--color-light-text, #211C18);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.contradiction-experience {
+  padding: 22px;
+  border: 1px solid var(--line, #D8C4A8);
+  border-radius: 8px;
+  background: var(--card, #FBF3E2);
+}
+
+.contradiction-experience .month-badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--accent, #A7342E);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.contradiction-experience h3 {
+  margin: 0 0 6px;
+  font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+  font-size: 22px;
+}
+
+.contradiction-experience .subtitle {
+  margin: 0 0 12px;
+  color: var(--color-light-text, #211C18);
+  font-size: 14px;
+}
+
+.contradiction-experience .intro,
+.contradiction-experience .question {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.contradiction-experience .question {
+  margin-top: 12px;
+  font-weight: 700;
+}
+
+.contradiction-options {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.contradiction-options button {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--line, #D8C4A8);
+  border-radius: 6px;
+  background: var(--surface, #FFFDF8);
+  color: var(--color-light-text, #211C18);
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+  cursor: pointer;
+}
+
+.contradiction-options button:hover {
+  border-color: var(--accent, #A7342E);
+}
+
+.contradiction-answer {
+  margin-top: 14px;
+  padding: 14px;
+  border-left: 4px solid var(--accent, #A7342E);
+  border-radius: 0 8px 8px 0;
+  background: var(--surface, #FFFDF8);
+  color: var(--color-light-text, #211C18);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.contradiction-answer .closing {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent, #A7342E);
+  font-weight: 700;
+}
+
+.quarterly-experience {
+  display: grid;
+  gap: 12px;
+}
+
+.quarterly-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quarterly-tabs button {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line, #D8C4A8);
+  border-radius: 6px;
+  background: var(--surface, #FFFDF8);
+  color: var(--color-light-text, #211C18);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.quarterly-tabs button.active {
+  border-color: var(--accent, #A7342E);
+  background: var(--accent, #A7342E);
+  color: #FFFFFF;
+}
+
+.quarterly-panel {
+  padding: 20px;
+  border: 1px solid var(--line, #D8C4A8);
+  border-radius: 8px;
+  background: var(--card, #FBF3E2);
+}
+
+.quarterly-panel h3 {
+  margin: 0 0 6px;
+  font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+  font-size: 20px;
+}
+
+.quarterly-panel p {
+  margin: 0 0 12px;
+  color: var(--color-light-text, #211C18);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.quarterly-questions {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quarterly-questions li {
+  padding: 12px;
+  border: 1px solid var(--line, #D8C4A8);
+  border-radius: 8px;
+  background: var(--surface, #FFFDF8);
+}
+
+.quarterly-questions strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.quarterly-questions textarea {
+  width: 100%;
+  min-height: 64px;
+  padding: 8px;
+  border: 1px solid var(--line, #D8C4A8);
+  border-radius: 6px;
+  background: var(--card, #FBF3E2);
+  color: var(--color-light-text, #211C18);
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.7;
+  resize: vertical;
+}
+
+@media (max-width: 620px) {
+  .experience-modal-card {
+    padding: 22px 18px;
+  }
+}
+
+/* 浅色体验卡强制深字 */
+.monthly-card-layer,
+.contradiction-experience,
+.quarterly-experience,
+.quarterly-panel {
+  color: var(--color-light-text, #211C18) !important;
+}
+
+.contradiction-experience h3,
+.contradiction-experience .intro,
+.contradiction-experience .question,
+.contradiction-experience .contradiction-options button,
+.contradiction-experience .contradiction-answer,
+.contradiction-experience .closing,
+.quarterly-experience h3,
+.quarterly-panel h3,
+.quarterly-panel p,
+.quarterly-questions strong,
+.quarterly-questions textarea {
+  color: var(--color-light-text, #211C18) !important;
+}

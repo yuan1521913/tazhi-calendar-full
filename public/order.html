@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211C18">
+  <meta name="robots" content="noindex, nofollow">
+  <title>她知 · 订单状态</title>
+  <link rel="stylesheet" href="order.css">
+</head>
+<body>
+  <header class="order-header">
+    <span class="brand">她知 · 制度日历</span>
+    <nav class="order-nav">
+      <a href="home.html">首页</a>
+      <a href="index.html">回到日历</a>
+      <a href="trust.html">信任与退款</a>
+    </nav>
+  </header>
+
+  <main class="order-main">
+    <section class="order-card" aria-live="polite">
+      <p class="status-kicker">订单状态</p>
+      <h1 id="orderTitle">正在查询订单...</h1>
+
+      <div id="orderMeta" class="order-meta" hidden></div>
+
+      <div id="qrBlock" class="qr-row" hidden>
+        <p class="manual-meta">演示版不包含收款码，请自行配置支付方式。</p>
+      </div>
+
+      <div id="codeBlock" class="code-box" hidden>
+        <span class="code-label">你的解锁码</span>
+        <span id="codeValue" class="code-value"></span>
+      </div>
+
+      <div class="action-row">
+        <button id="unlockBtn" class="primary-link" type="button" hidden>解锁并进入日历</button>
+        <button id="refreshBtn" class="text-button" type="button">刷新状态</button>
+      </div>
+
+      <p id="orderStatus" class="status-line" role="status"></p>
+      <p id="orderNote" class="order-note" hidden></p>
+      <p class="order-trust">数字版3天内可申请退款，退款后解锁码停用。详见<a href="trust.html">信任与退款</a>。</p>
+    </section>
+  </main>
+
+  <footer class="order-footer">她知 · 制度日历 · 看得懂制度，才有真正的底气</footer>
+
+  <script src="order.js"></script>
+</body>
+</html>
