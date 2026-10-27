@@ -18,11 +18,25 @@ npm install
 npm run dev
 ```
 
-打开 <http://127.0.0.1:4173>。端口可通过 `PORT` 环境变量修改：
+打开 <http://127.0.0.1:4173>。
+
+### 修改端口
+
+Windows PowerShell：
+
+```powershell
+$env:PORT=4174
+npm run dev
+```
+
+Linux / macOS：
 
 ```bash
 PORT=4174 npm run dev
 ```
+
+`PORT=4174 npm run dev` 是 Linux/macOS 的环境变量写法，不能直接在 Windows
+PowerShell 中使用。PowerShell 需要先执行 `$env:PORT=4174`，再运行 `npm run dev`。
 
 ## 目录结构
 
