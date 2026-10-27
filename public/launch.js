@@ -1,6 +1,6 @@
 (function () {
   // 首页抽卡：从已复核内容中选取 6 张。
-  // day / dimension / title 必须与 private-data/data.js 逐字一致，
+  // day / dimension / title 必须与 api/_data.js 逐字一致，
   // scripts/check-launch.mjs 会比对；quote 与 action 是为首页阅读截断过的展示文案，不参与比对。
   const DRAW = [
     {

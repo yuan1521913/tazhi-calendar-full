@@ -20,6 +20,17 @@ npm run dev
 
 打开 <http://127.0.0.1:4173>。
 
+### 生成双击打开版
+
+生成带全部 365 天数据、无需安装 Node.js 的单文件网页：
+
+```powershell
+node scripts/build-offline-single.mjs
+```
+
+默认生成 `她知-365天-双击打开.html`。这个文件可以直接发给别人，对方双击后用
+浏览器打开即可。
+
 ### 修改端口
 
 Windows PowerShell：
